@@ -1,0 +1,18 @@
+# 環境変数
+.env
+
+# Deno
+.env.local
+*.log
+/node_modules
+
+# エディタ関連
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.swp
+*.swo
+
+# OS関連
+.DS_Store
+Thumbs.db
