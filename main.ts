@@ -44,9 +44,7 @@ async function handler(req: Request) {
   const response = new Response(body, {
     headers: {
       "content-type": "text/plain;charset=utf-8",
-      "x-content-type-options": "nosniff", // MIMEスニッフィングの防止
-      "x-frame-options": "DENY", // クリックジャッキング対策
-      "x-xss-protection": "1;mode=block", // XSS対策
+      "x-content-type-options": "nosniff",
     },
   });
 

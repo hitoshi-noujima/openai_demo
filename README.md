@@ -10,9 +10,20 @@ URL 上のレシピ名に基づいて、チャット形式でリアルタイム�
 
 ## 必要条件
 
+以下のいずれかの環境が必要です：
+
+### Docker を使用する場合
+
+- Docker
+- Docker Compose
+
+### ローカルで直接実行する場合
+
 - [Deno](https://deno.land/)（最新バージョン推奨）
-- OpenAI API キーを環境変数 `OPENAI_API_KEY` に設定
-  （例: `export OPENAI_API_KEY=your_openai_api_key`）
+
+共通の要件：
+
+- OpenAI API キー
 
 ## セットアップ方法
 
@@ -23,25 +34,36 @@ URL 上のレシピ名に基づいて、チャット形式でリアルタイム�
    cd <repository_directory>
    ```
 
-2. OpenAI の API キーを環境変数に設定
-   例:
+2. 環境変数の設定
+   `.env` ファイルを作成し、OpenAI API キーを設定します：
 
-   ```bash
-   export OPENAI_API_KEY=your_openai_api_key
+   ```env
+   OPENAI_API_KEY=your_openai_api_key
    ```
-
-3. 初回起動時に Deno が必要な依存ファイルを自動的にダウンロードします。
 
 ## 起動方法
 
-Deno タスクを用いてサーバーを起動します。
-以下のコマンドで開発サーバーが起動し、コード変更時に自動で再起動されます。
+### Docker を使用する場合
+
+Docker Compose を使用してアプリケーションを起動します：
+
+```bash
+docker compose up
+```
+
+開発時はコード変更を検知して自動で再起動されます。
+
+### ローカルで直接実行する場合
+
+Deno を使用して直接サーバーを起動します：
 
 ```bash
 deno run dev
 ```
 
-サーバーが起動したら、ブラウザで以下の URL にアクセスしてください。
+## アクセス方法
+
+サーバーが起動したら、ブラウザで以下の URL にアクセスしてください：
 
 例:
 http://localhost:8000/おでん
